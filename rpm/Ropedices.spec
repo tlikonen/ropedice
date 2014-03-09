@@ -12,7 +12,7 @@ Name:       Ropedices
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    Rope Dices
+Summary:    Rope dices
 Version:    0.1
 Release:    1
 Group:      Qt/Qt
@@ -21,14 +21,14 @@ URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  Ropedices.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
-BuildRequires:  pkgconfig(Qt5Quick)
-BuildRequires:  pkgconfig(Qt5Qml)
-BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(sailfishapp) >= 0.0.10
+BuildRequires:  pkgconfig(Qt5Core)
+BuildRequires:  pkgconfig(Qt5Qml)
+BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Dices application
+A dice application for Sailfish OS
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -62,13 +62,13 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
-%{_datadir}/%{name}/qml
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-/usr/bin
-/usr/share/Ropedices
-/usr/share/applications
 /usr/share/icons/hicolor/86x86/apps
+/usr/share/applications
+/usr/share/Ropedices
+/usr/bin
+%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/%{name}/qml
+%{_bindir}
 # >> files
 # << files

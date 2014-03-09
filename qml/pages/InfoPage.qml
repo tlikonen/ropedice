@@ -33,6 +33,5 @@ License: Public domain
 Icon author: Steaphan Greene
 Icon license: Creative Commons BY-SA 3.0"
         }
-
     }
 }
