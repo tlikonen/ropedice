@@ -13,12 +13,13 @@ import "cover"
 
 ApplicationWindow
 {
+    id: base
+
     initialPage: Component { MainPage {} }
     cover: Component { CoverPage {} }
 
-    Item {
-        id: perus
-        property int nappiLeveys: parent.width * (3 / 7)
-        property string kansiteksti: " "
-    }
+    property string program_name: "Rope dices"
+    property int button_width: width * (3 / 7)
+    property string cover_text: " "
+
 }

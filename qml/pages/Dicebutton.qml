@@ -10,9 +10,8 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Button {
-    id: nappi
-    property int numero
-    text: "D" + numero
-    onClicked: satunnainen(numero)
-    width: perus.nappiLeveys
+    property int max
+    text: "D" + max
+    onClicked: roll_dices(max)
+    width: base.button_width
 }

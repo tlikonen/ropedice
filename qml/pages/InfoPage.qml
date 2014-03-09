@@ -25,11 +25,13 @@ Page {
         Label {
             anchors.margins: Theme.paddingLarge
             font.pixelSize: Theme.fontSizeExtraSmall
-            text: "Author: Teemu Likonen <tlikonen@iki.fi>
-Code license: Public domain
+            text: program_name + "
+
+Author: Teemu Likonen <tlikonen@iki.fi>
+License: Public domain
 
 Icon author: Steaphan Greene
-Icon license: CC BY-SA 3.0"
+Icon license: Creative Commons BY-SA 3.0"
         }
 
     }

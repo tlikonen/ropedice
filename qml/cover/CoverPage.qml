@@ -19,15 +19,14 @@ CoverBackground {
         width: parent.width
 
         Label {
-            id: nimikyltti
-            text: "Rope dices"
+            text: base.program_name
             horizontalAlignment: Grid.AlignHCenter
             width: parent.width
         }
 
         Label {
             font.pixelSize: Theme.fontSizeHuge
-            text: perus.kansiteksti
+            text: base.cover_text
             horizontalAlignment: Grid.AlignHCenter
             width: parent.width
         }

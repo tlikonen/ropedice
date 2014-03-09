@@ -12,23 +12,23 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
-    function satunnainen (katto) {
-        var summa = 0
-        var heitot = " "
-        for (var i = 1; i <= liuku.sliderValue; i = i + 1) {
-            var heitto = Math.floor((Math.random() * katto) + 1)
-            summa = summa + heitto
-            if (liuku.sliderValue > 1) {
+    function roll_dices (max) {
+        var sum = 0
+        var all_rolls = " "
+        for (var i = 1; i <= nod.sliderValue; i = i + 1) {
+            var roll = Math.floor((Math.random() * max) + 1)
+            sum = sum + roll
+            if (nod.sliderValue > 1) {
                 if (i == 1) {
-                    heitot = heitto.toString()
+                    all_rolls = roll.toString()
                 } else {
-                    heitot = heitot + " + " + heitto
+                    all_rolls = all_rolls + " + " + roll
                 }
             }
         }
-        vastaus.text = summa
-        perus.kansiteksti = summa
-        nopat.text = heitot
+        result.text = sum
+        base.cover_text = sum
+        dice_rolls.text = all_rolls
         return 0
     }
 
@@ -48,28 +48,28 @@ Page {
             id: column
             spacing: Theme.paddingLarge
             anchors.margins: Theme.paddingLarge
-            anchors.fill: parent
+            anchors.horizontalCenter: parent.horizontalCenter
 
             PageHeader {
-                title: "Rope dices"
+                title: base.program_name
             }
 
             Label {
-                id: vastaus
+                id: result
                 text: " "
                 font.pixelSize: Theme.fontSizeHuge
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
             Label {
-                id: nopat
+                id: dice_rolls
                 text: " "
                 font.pixelSize: Theme.fontSizeExtraSmall
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
             Slider {
-                id: liuku
+                id: nod
                 label: "Number of dices"
                 minimumValue: 1
                 maximumValue: 10
@@ -80,33 +80,31 @@ Page {
             }
 
             Grid {
-                id: ruudukko
                 columns: 2
                 rows: 4
                 spacing: 15
                 rowSpacing: 30
 
-                Dicebutton { numero: 4 }
-                Dicebutton { numero: 6 }
-                Dicebutton { numero: 8 }
-                Dicebutton { numero: 10 }
-                Dicebutton { numero: 12 }
-                Dicebutton { numero: 20 }
+                Dicebutton { max: 4 }
+                Dicebutton { max: 6 }
+                Dicebutton { max: 8 }
+                Dicebutton { max: 10 }
+                Dicebutton { max: 12 }
+                Dicebutton { max: 20 }
 
                 TextField {
-                    id: customText
+                    id: custom_dice
                     text: "100"
                     validator: IntValidator {}
                     inputMethodHints: Qt.ImhDigitsOnly
-                    width: perus.nappiLeveys
+                    width: base.button_width
                 }
 
                 Button {
                     text: "Dx"
-                    onClicked: satunnainen(customText.text)
-                    width: perus.nappiLeveys
+                    onClicked: roll_dices(custom_dice.text)
+                    width: base.button_width
                 }
-
             }
         }
     }
