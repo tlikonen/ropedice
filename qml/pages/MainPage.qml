@@ -38,7 +38,7 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: "Info"
-                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+                onClicked: pageStack.push(Qt.resolvedUrl("InfoPage.qml"))
             }
         }
 

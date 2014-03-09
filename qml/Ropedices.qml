@@ -13,7 +13,7 @@ import "cover"
 
 ApplicationWindow
 {
-    initialPage: Component { FirstPage { } }
+    initialPage: Component { MainPage {} }
     cover: Component { CoverPage {} }
 
     Item {
