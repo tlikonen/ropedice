@@ -68,7 +68,7 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraSmall
                 horizontalAlignment: Text.AlignHCenter
                 width: parent.width
-                height: 30
+                height: 20
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
             }
@@ -88,7 +88,7 @@ Page {
                 columns: 2
                 rows: 4
                 spacing: 15
-                rowSpacing: 30
+                rowSpacing: 25
 
                 Dicebutton { max: 4 }
                 Dicebutton { max: 6 }
