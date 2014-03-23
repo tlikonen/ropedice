@@ -95,7 +95,7 @@ Page {
                 TextField {
                     id: custom_dice
                     text: "100"
-                    validator: IntValidator { bottom: 2 }
+                    validator: IntValidator { bottom: 2; top: 10000 }
                     inputMethodHints: Qt.ImhDigitsOnly
                     width: base.button_width
                 }
