@@ -58,14 +58,19 @@ Page {
                 id: result
                 text: " "
                 font.pixelSize: Theme.fontSizeHuge
-                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
             }
 
             Label {
                 id: dice_rolls
                 text: " "
                 font.pixelSize: Theme.fontSizeExtraSmall
-                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
+                height: 30
+                wrapMode: Text.Wrap
+                maximumLineCount: 2
             }
 
             Slider {
