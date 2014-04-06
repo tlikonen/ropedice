@@ -1,35 +1,43 @@
 /*
 
-  Author: Teemu Likonen <tlikonen@iki.fi>
+  Modified: Asser Lähdemaki <asser@lahdemaki.fi>
 
-  This file is placed in the public domain.
+  */
 
-*/
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-CoverBackground {
+Cover {
 
-    Grid {
-        columns: 1
-        rows: 2
-        rowSpacing: 14
+    id: root
+
+    property string lastThrow: ""
+    property bool coverThrowEnabled: false
+
+    signal requestThrow()
+
+    Column {
         anchors.centerIn: parent
-        width: parent.width
-
         Label {
-            text: base.program_name
-            horizontalAlignment: Grid.AlignHCenter
-            width: parent.width
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Last throw:")
         }
-
         Label {
-            font.pixelSize: Theme.fontSizeHuge
-            text: base.cover_text
-            horizontalAlignment: Grid.AlignHCenter
-            width: parent.width
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: root.lastThrow
         }
-
     }
+
+    CoverActionList {
+
+        enabled: root.coverThrowEnabled
+
+        CoverAction {
+
+            iconSource: "/usr/share/icons/hicolor/86x86/apps/harbour-ropedices.png"
+            onTriggered: root.requestThrow()
+        }
+    }
+
 }

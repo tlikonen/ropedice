@@ -15,11 +15,29 @@ ApplicationWindow
 {
     id: base
 
-    initialPage: Component { MainPage {} }
-    cover: Component { CoverPage {} }
-
     property string program_name: "Rope dices"
+
     property int button_width: width * (3 / 7)
-    property string cover_text: " "
+
+    MainPage {
+
+        id: mainPage
+    }
+
+    initialPage: mainPage
+
+    cover: Component {
+        CoverPage {
+
+            lastThrow: mainPage.lastThrow
+
+            coverThrowEnabled: mainPage.diceIsThrown
+
+            onRequestThrow: {
+                mainPage.roll_dices(mainPage.lastDiceMax);
+            }
+
+        }
+    }
 
 }
