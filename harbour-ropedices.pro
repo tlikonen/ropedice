@@ -15,7 +15,6 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    qml/pages/Dicebutton.qml \
     qml/pages/MainPage.qml \
     qml/pages/InfoPage.qml \
     qml/harbour-ropedices.qml \

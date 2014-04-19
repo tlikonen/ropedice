@@ -109,7 +109,7 @@ Page {
 
                     model: [4, 6, 8, 10, 12, 20]
 
-                    Dicebutton {
+                    delegate: Button {
                         text: "D" + modelData
                         onClicked: roll_dices(modelData)
                         width: base.button_width
@@ -118,14 +118,15 @@ Page {
 
                 TextField {
                     id: custom_dice
-                    text: "100"
+                    text: ""
                     validator: IntValidator { bottom: 2; top: 10000 }
+                    placeholderText: "Sides count"
                     inputMethodHints: Qt.ImhDigitsOnly
                     width: base.button_width
                 }
 
                 Button {
-                    text: "Dx"
+                    text: "D" + custom_dice.text
                     onClicked: roll_dices(custom_dice.text)
                     width: base.button_width
                 }
