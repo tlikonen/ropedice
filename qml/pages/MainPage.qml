@@ -57,6 +57,8 @@ Page {
             }
         }
 
+        VerticalScrollDecorator {}
+
         contentHeight: column.height
 
         Column {
