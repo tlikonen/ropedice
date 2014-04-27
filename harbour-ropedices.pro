@@ -6,19 +6,19 @@
 #         - desktop icon filename must be changed
 #         - desktop filename must be changed
 #         - icon definition filename in desktop file must be changed
-TARGET = Ropedices
+TARGET = harbour-ropedices
 
 CONFIG += sailfishapp
 
-SOURCES += src/Ropedices.cpp
+SOURCES += \
+    src/harbour-ropedices.cpp
 
-OTHER_FILES += qml/Ropedices.qml \
+OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    rpm/Ropedices.spec \
-    rpm/Ropedices.yaml \
-    Ropedices.desktop \
-    qml/pages/Dicebutton.qml \
     qml/pages/MainPage.qml \
     qml/pages/InfoPage.qml \
-    README.md
+    qml/harbour-ropedices.qml \
+    harbour-ropedices.desktop \
+    rpm/harbour-ropedices.spec \
+    rpm/harbour-ropedices.yaml
 

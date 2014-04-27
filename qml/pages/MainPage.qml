@@ -2,6 +2,8 @@
 
   Author: Teemu Likonen <tlikonen@iki.fi>
 
+  Modified: Asser Lähdemaki <asser@lahdemaki.fi>
+
   This file is placed in the public domain.
 
 */
@@ -10,9 +12,16 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    id: page
+    id: root
+
+    property string lastThrow: ""
+    property bool diceIsThrown: false
+    property int lastDiceMax: 0
 
     function roll_dices (max) {
+
+        root.lastDiceMax = max
+
         var sum = 0
         var all_rolls = " "
         for (var i = 1; i <= nod.sliderValue; i = i + 1) {
@@ -27,8 +36,14 @@ Page {
             }
         }
         result.text = sum
-        base.cover_text = sum
+        root.lastThrow = nod.sliderValue + "d" + max + ": " + sum
         dice_rolls.text = all_rolls
+
+        if(root.diceIsThrown === false)
+        {
+            root.diceIsThrown = true
+        }
+
         return 0
     }
 
@@ -41,6 +56,8 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("InfoPage.qml"))
             }
         }
+
+        VerticalScrollDecorator {}
 
         contentHeight: column.height
 
@@ -87,26 +104,31 @@ Page {
             Grid {
                 columns: 2
                 rows: 4
-                spacing: 15
-                rowSpacing: 25
+                spacing: Theme.paddingLarge
+                rowSpacing: Theme.paddingLarge
 
-                Dicebutton { max: 4 }
-                Dicebutton { max: 6 }
-                Dicebutton { max: 8 }
-                Dicebutton { max: 10 }
-                Dicebutton { max: 12 }
-                Dicebutton { max: 20 }
+                Repeater {
+
+                    model: [4, 6, 8, 10, 12, 20]
+
+                    delegate: Button {
+                        text: "D" + modelData
+                        onClicked: roll_dices(modelData)
+                        width: base.button_width
+                    }
+                }
 
                 TextField {
                     id: custom_dice
                     text: "100"
                     validator: IntValidator { bottom: 2; top: 10000 }
+                    placeholderText: "Sides count"
                     inputMethodHints: Qt.ImhDigitsOnly
                     width: base.button_width
                 }
 
                 Button {
-                    text: "Dx"
+                    text: "D" + custom_dice.text
                     onClicked: roll_dices(custom_dice.text)
                     width: base.button_width
                 }

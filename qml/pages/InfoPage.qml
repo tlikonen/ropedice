@@ -28,6 +28,7 @@ Page {
             text: program_name + "
 
 Author: Teemu Likonen <tlikonen@iki.fi>
+Skrolli edition:\nAsser Lähdemäki <asser@lahdemaki.fi>
 License: Public domain
 
 Icon author: Steaphan Greene
