@@ -120,7 +120,7 @@ Page {
 
                 TextField {
                     id: custom_dice
-                    text: ""
+                    text: "100"
                     validator: IntValidator { bottom: 2; top: 10000 }
                     placeholderText: "Sides count"
                     inputMethodHints: Qt.ImhDigitsOnly
