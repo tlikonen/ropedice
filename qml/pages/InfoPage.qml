@@ -32,7 +32,10 @@ Skrolli edition:\nAsser Lähdemäki <asser@lahdemaki.fi>
 License: Public domain
 
 Icon author: Steaphan Greene
-Icon license: Creative Commons BY-SA 3.0"
+Icon license: Creative Commons BY-SA 3.0
+
+Note: \"Rope\" is Finnish abbreviation for
+roolipeli (role-playing game)."
         }
     }
 }
