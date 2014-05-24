@@ -17,7 +17,6 @@ OTHER_FILES += qml/Ropedice.qml \
     rpm/Ropedice.spec \
     rpm/Ropedice.yaml \
     Ropedice.desktop \
-    qml/pages/Dicebutton.qml \
     qml/pages/MainPage.qml \
     qml/pages/InfoPage.qml \
     README.md

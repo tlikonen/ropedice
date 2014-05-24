@@ -90,12 +90,15 @@ Page {
                 spacing: 15
                 rowSpacing: 25
 
-                Dicebutton { max: 4 }
-                Dicebutton { max: 6 }
-                Dicebutton { max: 8 }
-                Dicebutton { max: 10 }
-                Dicebutton { max: 12 }
-                Dicebutton { max: 20 }
+                Repeater {
+                    model: [4, 6, 8, 10, 12, 20]
+
+                    delegate: Button {
+                        text: "D" + modelData
+                        onClicked: roll_dice(modelData)
+                        width: base.button_width
+                    }
+                }
 
                 TextField {
                     id: custom_dice
