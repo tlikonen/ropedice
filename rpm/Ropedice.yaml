@@ -1,5 +1,5 @@
-Name: Ropedices
-Summary: Rope dices
+Name: Ropedice
+Summary: Rope dice
 Version: 0.1
 Release: 1
 Group: Qt/Qt
@@ -24,7 +24,7 @@ Files:
 - '%{_datadir}/applications/%{name}.desktop'
 - '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
 - /usr/bin
-- /usr/share/Ropedices
+- /usr/share/Ropedice
 - /usr/share/applications
 - /usr/share/icons/hicolor/86x86/apps
 PkgBR: []

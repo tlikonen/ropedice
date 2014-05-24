@@ -18,7 +18,7 @@ ApplicationWindow
     initialPage: Component { MainPage {} }
     cover: Component { CoverPage {} }
 
-    property string program_name: "Rope dices"
+    property string program_name: "Rope dice"
     property int button_width: width * (3 / 7)
     property string cover_text: " "
 

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Name=Rope dices
-Icon=Ropedices
-Exec=Ropedices
+Name=Rope dice
+Icon=Ropedice
+Exec=Ropedice

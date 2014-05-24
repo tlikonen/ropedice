@@ -12,6 +12,6 @@ import Sailfish.Silica 1.0
 Button {
     property int max
     text: "D" + max
-    onClicked: roll_dices(max)
+    onClicked: roll_dice(max)
     width: base.button_width
 }

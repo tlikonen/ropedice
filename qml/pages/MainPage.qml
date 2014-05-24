@@ -12,7 +12,7 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
-    function roll_dices (max) {
+    function roll_dice (max) {
         var sum = 0
         var all_rolls = " "
         for (var i = 1; i <= nod.sliderValue; i = i + 1) {
@@ -75,7 +75,7 @@ Page {
 
             Slider {
                 id: nod
-                label: "Number of dices"
+                label: "Number of dice"
                 minimumValue: 1
                 maximumValue: 10
                 stepSize: 1
@@ -107,7 +107,7 @@ Page {
 
                 Button {
                     text: "Dx"
-                    onClicked: roll_dices(custom_dice.text)
+                    onClicked: roll_dice(custom_dice.text)
                     width: base.button_width
                 }
             }
