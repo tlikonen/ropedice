@@ -18,5 +18,5 @@ Icon license: [Creative Commons BY-SA 3.0][CC]
 (The original icon is scaled down to 86×86 pixels. Otherwise it’s
 unmodified.)
 
-[PGP]: http://koti.kapsi.fi/~dtw/pgp-key.asc
+[PGP]: http://www.iki.fi/tlikonen/pgp-key.asc
 [CC]: http://creativecommons.org/licenses/by-sa/3.0/
